@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Semantic Highlighter</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Semantic Highlighter</h1>
+        <p>Toggle automatic article highlighting and adjust how much is marked.</p>
+      </header>
+
+      <section class="control">
+        <div class="control-row">
+          <span>Highlighting</span>
+          <label class="switch">
+            <input type="checkbox" id="toggle-enabled" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="control-row slider-row">
+          <div>
+            <span>Highlight amount</span>
+            <small id="intensity-label"></small>
+          </div>
+          <input
+            type="range"
+            id="intensity"
+            min="0.1"
+            max="0.8"
+            step="0.05"
+          />
+        </div>
+      </section>
+
+      <section class="debug">
+        <h2>Debug Info</h2>
+        <dl>
+          <div>
+            <dt>Status</dt>
+            <dd id="debug-status">–</dd>
+          </div>
+          <div>
+            <dt>Active analyses</dt>
+            <dd id="debug-active">0</dd>
+          </div>
+          <div>
+            <dt>Last applied spans</dt>
+            <dd id="debug-spans">0</dd>
+          </div>
+          <div>
+            <dt>Last error</dt>
+            <dd id="debug-error">None</dd>
+          </div>
+          <div>
+            <dt>Updated</dt>
+            <dd id="debug-updated">–</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

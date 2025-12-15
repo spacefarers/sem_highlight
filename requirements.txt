@@ -1,3 +1,8 @@
 datasets==4.1.1
 scikit-learn==1.7.2
 numpy==2.3.3
+tqdm==4.67.1
+Flask==3.0.0
+transformers==4.36.0
+torch==2.1.0
+onnxruntime==1.17.0

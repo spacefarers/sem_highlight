@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Semantic Highlighter",
+  "version": "0.1.0",
+  "description": "Highlights the most relevant phrases in long articles using the local RoBERTa model.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Semantic Highlighter",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "model/**/*",
+        "lib/transformers.min.js",
+        "lib/ort-wasm.wasm",
+        "lib/ort-wasm-simd.wasm",
+        "lib/ort-wasm-threaded.wasm",
+        "lib/ort-wasm-simd-threaded.wasm"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-width: 320px;
+}
+
+main {
+  padding: 16px 18px 14px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.control {
+  background: linear-gradient(140deg, #111827, #0b1225);
+  border: 1px solid #1f2a44;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 4px;
+}
+
+.control-row + .control-row {
+  border-top: 1px solid #1f2a44;
+  margin-top: 4px;
+  padding-top: 12px;
+}
+
+.control-row span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.slider-row {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.slider-row input[type="range"] {
+  width: 100%;
+  accent-color: #fbbf24;
+}
+
+.slider-row small {
+  color: #cbd5e1;
+  display: block;
+  margin-top: 2px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1f2937;
+  transition: 0.2s;
+  border-radius: 24px;
+  border: 1px solid #334155;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2.5px;
+  bottom: 2.5px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.switch input:checked + .slider {
+  background: linear-gradient(120deg, #fbbf24, #f59e0b);
+  border-color: #f59e0b;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.debug {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1f2a44;
+  background: linear-gradient(140deg, #111827, #0b1225);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.debug h2 {
+  font-size: 12px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.debug dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 6px;
+  column-gap: 10px;
+}
+
+.debug dt {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.debug dd {
+  margin: 0;
+  font-size: 12px;
+  color: #e2e8f0;
+}
